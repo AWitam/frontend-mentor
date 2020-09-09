@@ -1,0 +1,176 @@
+/* Variables*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  background-color: #ecf2f8;
+}
+
+.article__component {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  width: 90%;
+  -webkit-box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card .image__content {
+  background-image: url("../../images/drawers.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 20rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card .text__content {
+  padding: 3.6rem 3.2rem 1.8rem 3.6rem;
+}
+
+.card h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #48556a;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  margin-bottom: 1.5rem;
+}
+
+.card p.article__intro {
+  font-size: 1.3rem;
+  color: #6d7f97;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  margin-bottom: 3.2rem;
+}
+
+.card__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.3rem;
+  height: 4rem;
+}
+
+.card__footer img {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.card__footer .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card__footer .info p {
+  margin-left: 1.2rem;
+}
+
+.card__footer .info .author {
+  color: #48556a;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.card__footer .info .date {
+  color: #9eafc2;
+  display: block;
+}
+
+.card__footer .icon__share {
+  background-color: #ecf2f8;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+}
+
+.card__footer .icon__share svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 480px) and (max-width: 600px) {
+  .card .text__content {
+    padding: 3.6rem 5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 58rem;
+    height: 34rem;
+  }
+  .card .image__content {
+    background-image: url("../../images/drawers.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 45%;
+    border-radius: 1rem 0 0 1rem;
+  }
+  .card .text__content {
+    max-width: 55%;
+    padding: 4rem 3.2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 65rem;
+    height: 28rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card {
+    width: 73rem;
+    height: 28rem;
+  }
+  .image__content {
+    width: 30%;
+  }
+  .text__content {
+    max-width: 70%;
+    padding: 3.2rem 4rem;
+  }
+}
