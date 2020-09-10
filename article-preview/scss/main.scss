@@ -11,10 +11,6 @@ $light-blue: hsl(210, 46%, 95%);
   box-sizing: border-box;
 }
 
-p {
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
 
 html {
   font-family: "Manrope", sans-serif;
@@ -35,8 +31,8 @@ html {
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 10px;
-  width: 90%;
-  box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
+  width: 32.5rem;
+  box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);  
 
   .image__content {
     background-image: url("../../images/drawers.jpg");
@@ -48,7 +44,7 @@ html {
   }
 
   .text__content {
-    padding: 3.6rem 3.2rem 1.8rem 3.6rem;
+    padding: 3.2rem 3.2rem 1.8rem 3.2rem;
   }
 
   h4 {
@@ -67,6 +63,22 @@ html {
     font-weight: 500;
     letter-spacing: 0.15px;
     margin-bottom: 3.2rem;
+  }
+
+  .icon__share {
+    background-color: $light-blue;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    align-self: center;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__footer {
@@ -91,7 +103,7 @@ html {
       .author {
         color: $dark-blue;
         font-weight: 700;
-        margin: 0.5rem 0;
+        margin: 0.5rem 0 0.3rem 0;
         display: block;
       }
 
@@ -101,26 +113,42 @@ html {
       }
     }
 
-    .icon__share {
-      background-color: $light-blue;
-      border-radius: 50%;
-      height: 3rem;
-      width: 3rem;
+    
+  }
+
+  .share__box {
+    height: 6.4rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    background-color: $dark-blue;
+    border-radius: 0 0 1rem 1rem;
+    padding: 2.3rem 3.2rem;
+    display: none;
+
+    span {
+      color: $light-blue;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       align-self: center;
-      position: relative;
+    }
+
+    .icons__social {
+      display: flex;
+      align-content: center;
 
       svg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: 0 7px;
+        align-self: center; 
       }
-    }
+    }    
+
   }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 600px) {
   .card {
+    width: 40rem;
     .text__content {
       padding: 3.6rem 5rem;
 
@@ -128,22 +156,28 @@ html {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .card {
     display: flex;
     width: 58rem;
     height: 34rem;
 
-    .image__content {
-      background-image: url("../../images/drawers.jpg");  
-      background-position: center;
-      background-size: cover;    
+    h4{
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+    }
+
+    p.article__intro {    
+      margin-bottom: 2.5rem;
+    }
+
+    .image__content {  
       height: 100%;
       width: 45%;
       border-radius: 1rem 0 0 1rem;
     }
     .text__content {
-      max-width: 55%;
+      width: 55%;
       padding:  4rem 3.2rem;
     }
   }  
@@ -153,21 +187,62 @@ html {
   .card {
     width: 65rem;
     height: 28rem;
+    display: flex;
+
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .image__content {  
+      height: 100%;
+      width: 45%;
+      border-radius: 1rem 0 0 1rem;
+    }
+
+    .text__content {
+      width: 55%;
+      padding: 3rem 3.2rem;
+    }
+
+    p.article__intro {    
+      margin-bottom: 2.3rem;
+    }
   }
 }
 
 @media only screen and (min-width: 992px) {
   .card {
+    display: flex;
     width: 73rem;
     height: 28rem;
+
+    h4 {
+      font-size: 1.9rem;      
+      margin-bottom: 1.8rem;
+      padding-right: 2rem;
+      line-height: 1.4;
+    }
+
+    .image__content{
+      width: 28.5rem;
+      height: 100%;
+      border-radius: 1rem 0 0 1rem;  
+    }
+
+    .text__content {
+      width: 44.5rem;
+      padding: 3.2rem 4rem;
+    }
+
+    p.article__intro {
+      font-size: 1.3rem;
+      color: $desaturated-blue;
+      line-height: 1.55;
+      font-weight: 500;
+      letter-spacing: 0.15px;
+      margin-bottom: 1.8rem;
+    }
   }
 
-  .image__content{
-    width: 30%;
-  }
-
-  .text__content {
-    max-width: 70%;
-    padding: 3.2rem 4rem;
-  }
 }
