@@ -125,14 +125,25 @@ html {
     border-radius: 0 0 1rem 1rem;
     padding: 2.3rem 3.2rem;
     position: absolute;
-    bottom: -6.4rem;    
-    transition:  bottom cubic-bezier(0.165, 0.84, 0.44, 1) 2s;    
+    bottom: -6.4rem;      
     display: none;
     
 
     &.active {
       bottom: 0;
-      display: flex;      
+      display: flex;  
+      animation: fadeIn 0.2s;    
+    }
+
+    @keyframes fadeIn {
+      from {
+        bottom: -1rem;
+        opacity: 0;
+      }
+      to {
+        bottom: 0;
+        opacity: 1;
+      }
     }
     
 
