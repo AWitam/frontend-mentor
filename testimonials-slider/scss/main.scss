@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  height: 100vh;
+}
+
+.slides {
+  width: 375px;
+  background-image: url('../../images/pattern-bg.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2.5rem 0;
+
+  .pictures {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+
+    img {
+      height: 25.5rem;
+      width: 25.5rem;
+      border-radius: 0.8rem;
+     // box-shadow: -5px 30px 50px -15px rgba(64, 60, 103, 0.4);
+    }
+  }
+}
