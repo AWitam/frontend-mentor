@@ -9,7 +9,7 @@ Your challenge is to build out this article preview component and get it looking
 
 #### Designs
 
-[![Given designs for mobile and desktop](./design/designs.jpg)]
+[![Given designs for mobile and desktop](./design/designs.png)]
 
 #### Live 
 
