@@ -5,12 +5,14 @@ $desaturated-blue: hsl(214, 17%, 51%);
 $grayish-blue: hsl(212, 23%, 69%);
 $light-blue: hsl(210, 46%, 95%);
 
+/*Font*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 html {
   font-family: "Manrope", sans-serif;
@@ -18,12 +20,14 @@ html {
   background-color: $light-blue;
 }
 
+/*Main styles */
+
 .article__component {
   margin: 0 auto;
   width: 100%;
 }
 
-.card {  
+.card {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,7 +35,7 @@ html {
   background-color: #fff;
   border-radius: 10px;
   width: 32.5rem;
-  box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
 
   .image__content {
     background-image: url("../../images/drawers.jpg");
@@ -112,8 +116,6 @@ html {
         display: block;
       }
     }
-
-    
   }
 
   .share__box {
@@ -125,14 +127,13 @@ html {
     border-radius: 0 0 1rem 1rem;
     padding: 2.3rem 3.2rem;
     position: absolute;
-    bottom: -6.4rem;      
+    bottom: -6.4rem;
     display: none;
-    
 
     &.active {
       bottom: 0;
-      display: flex;  
-      animation: fadeIn 0.2s;    
+      display: flex;
+      animation: fadeIn 0.2s;
     }
 
     @keyframes fadeIn {
@@ -145,7 +146,6 @@ html {
         opacity: 1;
       }
     }
-    
 
     span {
       color: $light-blue;
@@ -160,21 +160,21 @@ html {
 
       svg {
         margin: 0 7px;
-        align-self: center; 
+        align-self: center;
         cursor: pointer;
       }
-    }    
-
+    }
   }
 }
+
+/* Media queries*/
 
 @media only screen and (min-width: 480px) and (max-width: 600px) {
   .card {
     width: 40rem;
     .text__content {
       padding: 3rem 5rem;
-
-    } 
+    }
 
     .share__box {
       height: 8rem;
@@ -187,18 +187,18 @@ html {
 @media only screen and (min-width: 600px) {
   .card {
     .share__box.active {
-        align-items: center;
-        width: 22rem;
-        height: 5.5rem;
-        color: #fff;
-        text-align: center;
-        position: absolute;
-        z-index: 1;
-        justify-content: space-around; 
-        border-radius: 1rem;           
-        transform: translateY(-180%);    
-        right: -6.5rem;
-        box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1); 
+      align-items: center;
+      width: 22rem;
+      height: 5.5rem;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      z-index: 1;
+      justify-content: space-around;
+      border-radius: 1rem;
+      transform: translateY(-180%);
+      right: -6.5rem;
+      box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
 
       .icon__share {
         display: none;
@@ -208,27 +208,25 @@ html {
         svg:hover {
           opacity: 0.8;
           transform: scale(0.95);
-
-        }        
-      }      
+        }
+      }
     }
 
     .share__box.active::after {
       content: "";
       position: absolute;
-      top: 99%;      
+      top: 99%;
       margin-left: -5px;
       border-width: 12px;
       border-style: solid;
-      border-color: $dark-blue transparent transparent transparent;    
+      border-color: $dark-blue transparent transparent transparent;
     }
 
-    .icon__share:hover{
+    .icon__share:hover {
       opacity: 0.8;
       transform: scale(0.95);
     }
   }
-
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -237,25 +235,25 @@ html {
     width: 58rem;
     height: 34rem;
 
-    h4{
+    h4 {
       font-size: 1.7rem;
       margin-bottom: 2rem;
     }
 
-    p.article__intro {    
+    p.article__intro {
       margin-bottom: 2.5rem;
     }
 
-    .image__content {  
+    .image__content {
       height: 100%;
       width: 45%;
       border-radius: 1rem 0 0 1rem;
     }
     .text__content {
       width: 55%;
-      padding:  4rem 3.2rem;
+      padding: 4rem 3.2rem;
     }
-  }  
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -269,7 +267,7 @@ html {
       margin-bottom: 1.8rem;
     }
 
-    .image__content {  
+    .image__content {
       height: 100%;
       width: 45%;
       border-radius: 1rem 0 0 1rem;
@@ -280,7 +278,7 @@ html {
       padding: 3rem 3.2rem;
     }
 
-    p.article__intro {    
+    p.article__intro {
       margin-bottom: 2.3rem;
     }
 
@@ -288,7 +286,6 @@ html {
       right: -6.5rem;
       transform: translateY(-165%);
     }
-  
   }
 }
 
@@ -299,16 +296,16 @@ html {
     height: 28rem;
 
     h4 {
-      font-size: 1.9rem;      
+      font-size: 1.9rem;
       margin-bottom: 1.8rem;
       padding-right: 2rem;
       line-height: 1.4;
     }
 
-    .image__content{
+    .image__content {
       width: 28.5rem;
       height: 100%;
-      border-radius: 1rem 0 0 1rem;  
+      border-radius: 1rem 0 0 1rem;
     }
 
     .text__content {
@@ -332,6 +329,5 @@ html {
     .share__box.active::after {
       top: 98%;
     }
-   
   }
 }
