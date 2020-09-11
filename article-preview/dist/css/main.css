@@ -70,6 +70,7 @@ html {
       -ms-grid-row-align: center;
       align-self: center;
   position: relative;
+  cursor: pointer;
 }
 
 .card .icon__share svg {
@@ -121,9 +122,7 @@ html {
 
 .card .share__box {
   height: 6.4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: justify;
@@ -132,7 +131,18 @@ html {
   background-color: #48556a;
   border-radius: 0 0 1rem 1rem;
   padding: 2.3rem 3.2rem;
+  position: absolute;
+  bottom: -6.4rem;
+  -webkit-transition: bottom cubic-bezier(0.165, 0.84, 0.44, 1) 2s;
+  transition: bottom cubic-bezier(0.165, 0.84, 0.44, 1) 2s;
   display: none;
+}
+
+.card .share__box.active {
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .card .share__box span {
@@ -157,6 +167,7 @@ html {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 480px) and (max-width: 600px) {
@@ -164,7 +175,56 @@ html {
     width: 40rem;
   }
   .card .text__content {
-    padding: 3.6rem 5rem;
+    padding: 3rem 5rem;
+  }
+  .card .share__box {
+    height: 8rem;
+    bottom: -8rem;
+    padding: 3rem 5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .card .share__box.active {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 22rem;
+    height: 5.5rem;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border-radius: 1rem;
+    -webkit-transform: translateY(-180%);
+            transform: translateY(-180%);
+    right: -6.5rem;
+    -webkit-box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1);
+  }
+  .card .share__box.active .icon__share {
+    display: none;
+  }
+  .card .share__box.active .icons__social svg:hover {
+    opacity: 0.8;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  .card .share__box.active::after {
+    content: "";
+    position: absolute;
+    top: 99%;
+    margin-left: -5px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: #48556a transparent transparent transparent;
+  }
+  .card .icon__share:hover {
+    opacity: 0.8;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
 }
 
@@ -218,6 +278,11 @@ html {
   .card p.article__intro {
     margin-bottom: 2.3rem;
   }
+  .card .share__box.active {
+    right: -6.5rem;
+    -webkit-transform: translateY(-165%);
+            transform: translateY(-165%);
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -250,5 +315,11 @@ html {
     font-weight: 500;
     letter-spacing: 0.15px;
     margin-bottom: 1.8rem;
+  }
+  .card .share__box.active {
+    right: -5.7rem;
+  }
+  .card .share__box.active::after {
+    top: 98%;
   }
 }

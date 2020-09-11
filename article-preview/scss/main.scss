@@ -23,8 +23,7 @@ html {
   width: 100%;
 }
 
-.card {
-  
+.card {  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -72,6 +71,7 @@ html {
     width: 3rem;
     align-self: center;
     position: relative;
+    cursor: pointer;
 
     svg {
       position: absolute;
@@ -118,13 +118,23 @@ html {
 
   .share__box {
     height: 6.4rem;
-    display: flex;
+    width: 100%;
     align-content: center;
     justify-content: space-between;
     background-color: $dark-blue;
     border-radius: 0 0 1rem 1rem;
     padding: 2.3rem 3.2rem;
+    position: absolute;
+    bottom: -6.4rem;    
+    transition:  bottom cubic-bezier(0.165, 0.84, 0.44, 1) 2s;    
     display: none;
+    
+
+    &.active {
+      bottom: 0;
+      display: flex;      
+    }
+    
 
     span {
       color: $light-blue;
@@ -140,6 +150,7 @@ html {
       svg {
         margin: 0 7px;
         align-self: center; 
+        cursor: pointer;
       }
     }    
 
@@ -150,10 +161,63 @@ html {
   .card {
     width: 40rem;
     .text__content {
-      padding: 3.6rem 5rem;
+      padding: 3rem 5rem;
 
     } 
+
+    .share__box {
+      height: 8rem;
+      bottom: -8rem;
+      padding: 3rem 5rem;
+    }
   }
+}
+
+@media only screen and (min-width: 600px) {
+  .card {
+    .share__box.active {
+        align-items: center;
+        width: 22rem;
+        height: 5.5rem;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        z-index: 1;
+        justify-content: space-around; 
+        border-radius: 1rem;           
+        transform: translateY(-180%);    
+        right: -6.5rem;
+        box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.1); 
+
+      .icon__share {
+        display: none;
+      }
+
+      .icons__social {
+        svg:hover {
+          opacity: 0.8;
+          transform: scale(0.95);
+
+        }        
+      }      
+    }
+
+    .share__box.active::after {
+      content: "";
+      position: absolute;
+      top: 99%;      
+      margin-left: -5px;
+      border-width: 12px;
+      border-style: solid;
+      border-color: $dark-blue transparent transparent transparent;    
+    }
+
+    .icon__share:hover{
+      opacity: 0.8;
+      transform: scale(0.95);
+    }
+  }
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -208,6 +272,12 @@ html {
     p.article__intro {    
       margin-bottom: 2.3rem;
     }
+
+    .share__box.active {
+      right: -6.5rem;
+      transform: translateY(-165%);
+    }
+  
   }
 }
 
@@ -243,6 +313,14 @@ html {
       letter-spacing: 0.15px;
       margin-bottom: 1.8rem;
     }
-  }
 
+    .share__box.active {
+      right: -5.7rem;
+    }
+
+    .share__box.active::after {
+      top: 98%;
+    }
+   
+  }
 }
