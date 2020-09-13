@@ -27,10 +27,28 @@ html {
     max-width: 100%;
 
     img {
+      display: none;
       height: 25.5rem;
       width: 25.5rem;
       border-radius: 0.8rem;
-     // box-shadow: -5px 30px 50px -15px rgba(64, 60, 103, 0.4);
+      box-shadow: -5px 30px 50px -15px rgba(64, 60, 103, 0.4);
+    }
+  }
+
+  .slides-buttons {    
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 8rem;
+    height: 4rem;
+    margin: -2rem auto 0 auto;
+    position: relative;
+    z-index: 5; 
+    border-radius: 2rem;
+    box-shadow: -5px 30px 50px -15px rgba(64, 60, 103, 0.4);
+    
+    img {
+      margin: 1.2rem 1.5rem;
     }
   }
 }
