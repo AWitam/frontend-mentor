@@ -1,9 +1,11 @@
 class Slider {
-  constructor(images) {
+  constructor(images, testimonials) {
     this.images = images;
     this.slider =  document.querySelector('.section-slider');
     this.currentSlide = 0;   
     this.currentImage = null;
+    this.testimonials = testimonials;
+    this.currentTestimonial = null;
     this.btnPrev = document.querySelector('.button-prev');
     this.btnNext =  document.querySelector('.button-next');    
   }
@@ -11,6 +13,8 @@ class Slider {
   initSlider() {
     this.currentImage = this.images[this.currentSlide];
     this.currentImage.style.display = 'block';
+    this.currentTestimonial = this.testimonials[this.currentSlide];
+    this.currentTestimonial.style.display = 'block';
     this.addEventListeners();
   }
  
@@ -43,6 +47,9 @@ class Slider {
     this.currentImage.style.display = 'none';
     this.currentImage = this.images[index];
     this.currentImage.style.display='block';
+    this.currentTestimonial.style.display = 'none';
+    this.currentTestimonial = this.testimonials[index];
+    this.currentTestimonial.style.display = 'block';
   }
 
 
@@ -51,6 +58,7 @@ class Slider {
 
 (function() {
   const images = Array.from(document.querySelector('.pictures').children);
-  const slider = new Slider(images);
+  const testimonials = Array.from(document.querySelector('.testimonials-content').children);
+  const slider = new Slider(images, testimonials);
   slider.initSlider();
 })();
