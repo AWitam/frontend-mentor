@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+
+body {
+  font-family: 'Rubik', sans-serif;  
+  color: #333;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/* colors */
+$white: #fff;
+$darkest-grey: hsl(0, 0%, 17%);
+$dark-grey: hsl(0, 0%, 59%);
+
+header {
+  font-size: 1.8rem;
+  height: 36vh;
+  background-image: url('../../images/pattern-bg.png');
+  background-size: cover;
+  text-align: center;
+  padding: 2.4rem;
+
+  h1 {
+    color: $white;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  form {
+    margin: 2.4rem 0;
+    height: 6rem;
+    display: flex;
+    width: 100%;    
+
+    input{
+      cursor: pointer;
+    }
+
+    input[type=text] {
+      width: 80%;
+      border: none;
+      font-size: 1.2rem;
+      border-bottom-left-radius: 1.5rem;
+      border-top-left-radius: 1.5rem;
+      padding-left: 2.4rem;
+    }
+
+    input[type=submit] {
+      width: 20%;
+      border: none;
+      border-top-right-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      background-color: $darkest-grey;
+      color: $white;
+      font-weight: 100;
+      font-size: 2rem;
+    }
+
+    input:focus{
+      outline: none;
+    }
+    
+  }
+  
+}
+
+#map {
+  height: 64vh;
+}
+
+.data-display {
+  position: absolute;
+}
+
