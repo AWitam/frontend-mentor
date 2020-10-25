@@ -11,24 +11,36 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
-
   <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
   <header>
     <div>
-      <h1 class="page-title">IP Adress Tracker</h1>
+      <h1 class="page-title">IP Address Tracker</h1>
       <form>
-        <input type="text" placeholder="Search for any IP address or domain">
+        <input type="text" placeholder="Search for IP address" value="192.212.174.101">
         <input type="submit" value=">">
       </form>
     </div>    
   </header>
-  <main class="data-display">
-    <div class="label ip-adress">IP adress</div>
-    <div class="label location">location</div>
-    <div class="label timezone">timezone</div>
-    <div class="label isp">ISP</div>
+  <main>
+    <div class="data-display">
+      <div>  <div class="label">IP adress</div>
+      <span class="data ip-adress"></span>
+    </div>
+    <div>
+      <div class="label">location</div>
+      <span class="data location"></span>
+    </div>
+    <div>
+      <div class="label">timezone</div>
+      <span class="data timezone"></span>
+    </div>
+    
+    
+      <div class="label">ISP</div>
+      <span class="data isp"></span>
+    </div>    
   </main>
   <div id="map"></div>
 

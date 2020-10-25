@@ -3,10 +3,10 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 10px;
 }
 
-body {
+html {
+  font-size: 10px;
   font-family: 'Rubik', sans-serif;
   color: #333;
 }
@@ -24,7 +24,6 @@ h6 {
 
 /* colors */
 header {
-  font-size: 1.8rem;
   height: 36vh;
   background-image: url("../../images/pattern-bg.png");
   background-size: cover;
@@ -69,16 +68,79 @@ header form input[type=submit] {
   color: #fff;
   font-weight: 100;
   font-size: 2rem;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
 }
 
 header form input:focus {
   outline: none;
 }
 
-#map {
-  height: 64vh;
+header form input[type=submit]:hover {
+  background-color: #3b3b3b;
 }
 
-.data-display {
+#map {
+  height: 64vh;
+  position: relative;
+  z-index: -1;
+}
+
+main {
+  width: 100%;
+  padding: 2.4rem;
   position: absolute;
+  z-index: 10;
+  margin-top: -40%;
+}
+
+main .data-display {
+  background-color: #fff;
+  height: 29.5rem;
+  border-radius: 1.5rem;
+  padding: 2.4rem;
+  font-size: 1.8rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: 0px 20px 25px rgba(150, 150, 150, 0.3);
+          box-shadow: 0px 20px 25px rgba(150, 150, 150, 0.3);
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+main .data-display .label {
+  font-size: 1rem;
+  color: #030202;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+main .data-display .data {
+  margin-bottom: 0.8rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  header form {
+    max-width: 55rem;
+    margin: 2.4rem auto;
+  }
+  main {
+    margin-top: -10%;
+  }
+  main .data-display {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }

@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 10px;
 }
 
 
-body {
+html {
+  font-size: 10px;
   font-family: 'Rubik', sans-serif;  
   color: #333;
 }
@@ -25,10 +25,11 @@ h6 {
 /* colors */
 $white: #fff;
 $darkest-grey: hsl(0, 0%, 17%);
-$dark-grey: hsl(0, 0%, 59%);
+$grey-hover:hsl(0, 0%, 23%);
+$dark-grey: hsl(0, 20%, 1%);
+$grey-shadow: hsla(0, 0%, 59%, 0.3);
 
 header {
-  font-size: 1.8rem;
   height: 36vh;
   background-image: url('../../images/pattern-bg.png');
   background-size: cover;
@@ -69,10 +70,15 @@ header {
       color: $white;
       font-weight: 100;
       font-size: 2rem;
+      transition: background-color 0.1s ease;
     }
 
     input:focus{
       outline: none;
+    }
+
+    input[type=submit]:hover {
+      background-color: $grey-hover;
     }
     
   }
@@ -81,9 +87,64 @@ header {
 
 #map {
   height: 64vh;
+  position: relative;
+  z-index:-1;
 }
 
-.data-display {
+main {
+  width: 100%;
+  padding: 2.4rem;
   position: absolute;
+  z-index: 10;
+  margin-top: -40%;
+
+  .data-display {
+    background-color: $white;
+    height: 29.5rem;
+    border-radius: 1.5rem;
+    padding: 2.4rem;
+    font-size: 1.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 20px 25px $grey-shadow;
+    color: $darkest-grey;
+    font-weight: 500;
+
+
+    .label {
+      font-size: 1rem;
+      color: $dark-grey;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+    }
+
+    .data {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+//Desktop design
+@media only screen and (min-width: 1000px) {
+  header {
+    form {
+      max-width: 55rem;
+      margin: 2.4rem auto;
+    }
+
+  }
+
+
+  main {
+    margin-top: -10%;
+    
+  .data-display {
+    flex-direction: row;
+  }
+
+  }
 }
 
