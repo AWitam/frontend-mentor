@@ -10,8 +10,8 @@
 
 #### Designs
 
-![Given designs for mobile and desktop](./designs/Frame 1.png)
+![Given designs for mobile and desktop](./designs/designs.png)
 
 #### Live 
 
-ip-tracker-roan.vercel.app
+https://https://ip-tracker-roan.vercel.app/k
