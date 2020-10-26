@@ -22,7 +22,7 @@ class formUI {
 
   //Sets the map view for the same cordinates as used in design
   init() {
-    this.validate(this.userInput.value);
+    this.fetchData();
     this.userInput.value = "";
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",

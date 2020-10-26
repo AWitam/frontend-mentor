@@ -137,6 +137,9 @@ main .data-display .data {
     max-width: 45rem;
     margin: 2.4rem auto;
   }
+  main {
+    padding: 2.4 8rem;
+  }
   main .data-display {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -170,7 +173,7 @@ main .data-display .data {
     max-width: 55rem;
   }
   main {
-    padding: 2.4rem 5.8rem;
+    padding: 2.4rem 10rem;
   }
   main .data-display {
     height: 16.5rem;
@@ -183,6 +186,9 @@ main .data-display .data {
 }
 
 @media only screen and (min-width: 1300px) {
+  main {
+    padding: 2.4rem 16.2rem;
+  }
   main .data-display {
     font-size: 2.2rem;
   }
@@ -190,7 +196,7 @@ main .data-display .data {
 
 @media only screen and (min-width: 2000px) {
   main {
-    padding: 2.4rem 15rem;
+    padding: 2.4rem 30rem;
   }
   main .data-display {
     font-size: 2.8rem;
