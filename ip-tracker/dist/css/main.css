@@ -91,7 +91,9 @@ main {
   padding: 2.4rem;
   position: absolute;
   z-index: 10;
-  margin-top: -40%;
+  margin: 0 auto;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
 }
 
 main .data-display {
@@ -119,28 +121,79 @@ main .data-display {
 
 main .data-display .label {
   font-size: 1rem;
-  color: #030202;
+  color: #969696;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 main .data-display .data {
   margin-bottom: 0.8rem;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 600px) {
   header form {
-    max-width: 55rem;
+    max-width: 45rem;
     margin: 2.4rem auto;
-  }
-  main {
-    margin-top: -10%;
   }
   main .data-display {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    height: 14rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.5rem;
+  }
+  main .border {
+    padding: 0 3rem;
+    width: 100%;
+    text-align: left;
+  }
+  main .border:nth-child(-n+3) {
+    border-right: 1px solid #969696;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  header {
+    padding-top: 3rem;
+    height: 28rem;
+  }
+  header h1 {
+    font-size: 2.8rem;
+  }
+  header form {
+    max-width: 55rem;
+  }
+  main {
+    padding: 2.4rem 5.8rem;
+  }
+  main .data-display {
+    height: 16.5rem;
+    font-size: 1.8rem;
+  }
+  main .data-display .label {
+    text-align: left;
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  main .data-display {
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  main {
+    padding: 2.4rem 15rem;
+  }
+  main .data-display {
+    font-size: 2.8rem;
+    height: 20rem;
   }
 }
