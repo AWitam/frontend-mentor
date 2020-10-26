@@ -14,4 +14,4 @@
 
 #### Live 
 
-https://https://ip-tracker-roan.vercel.app/k
+https://ip-tracker-roan.vercel.app/k
