@@ -13,5 +13,4 @@
 ![Given designs for mobile and desktop](./designs/designs.png)
 
 #### Live 
-
-https://https://ip-tracker-roan.vercel.app/k
+https://ip-tracker-roan.vercel.app/
