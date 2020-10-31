@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap");
+*, html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Spartan', sans-serif;
+  font-size: 10px;
+}
+
+/***************  colors ****************/
+header {
+  background-image: url(../../images/mobile-image-hero-1.jpg);
+  height: 36rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4rem 2.5rem;
+}
+
+header .header-wrapper.open {
+  background-color: white;
+}
+
+.hamburger {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  z-index: 100;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+nav {
+  width: 100%;
+  visibility: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav li {
+  list-style-type: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  position: absolute;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #454545;
+  font-size: 2.4rem;
+  font-weight: 600;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+}
+
+.arrows-wrapper {
+  background-color: black;
+  height: 5.5rem;
+  width: 11rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+}
+
+.arrows-wrapper .arrow {
+  padding: 0 2rem;
+}
+
+section {
+  padding: 7rem 3rem;
+}
+
+section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+section h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+section p {
+  font-size: 1.2rem;
+  color: #a1a1a1;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 4rem;
+}
