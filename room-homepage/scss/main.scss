@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
 
+@-ms-viewport{
+  width: device-width;
+}
 
 *, html {
   box-sizing: border-box;
@@ -16,6 +19,11 @@ $dark-gray: hsl(0, 0%, 63%);
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 $very-dark-grey: hsl(0, 0%, 27%);
+
+p, h1, h2,h3 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
 
 
 header {
@@ -35,15 +43,22 @@ header {
   }
 }
 
-.hamburger {
-  height: 2rem;
-  width: 2rem;
+button {
   background-color: transparent;
   border: none;
-  position: absolute;
-  z-index: 100;
   &:focus {
     outline: none;
+  }
+}
+
+.hamburger {
+  height: 2rem;
+  width: 2rem; 
+  position: absolute;
+  z-index: 100;
+
+  img {
+    margin-top:0.3rem;
   }
 }
 
@@ -90,30 +105,57 @@ nav {
 }
   
 
-section {
-  padding: 7rem 3rem;
+section {  
 
   h2 {
     font-size: 2.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-weight: 600;
   }
 
   h3 {
     text-transform: uppercase;
-    letter-spacing: 0.3rem;
-    font-weight: 300;
-    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1rem;
+    font-size: 1.2rem;
   }
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
   p {
     font-size: 1.2rem;
     color: $dark-gray;
     font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 4rem;
+    line-height: 1.8;
+  }
+
+  .cta {  
+    display: flex;
+    align-items: center;
+    .cta-arrow {
+      width: 4rem;
+      height: auto;
+      margin-left: 4rem;
+    }
   }
 }
 
+.hero-content {
+  padding: 7rem 3rem;
+
+  p {
+    margin-bottom: 4rem;;
+  }
+}
+
+.about {
+  padding: 6rem 3rem;
+}
 
 
 
