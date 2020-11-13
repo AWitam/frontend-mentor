@@ -20,9 +20,6 @@ hamburger.addEventListener('click', (e) => {
 });
 /// Slider
 
-/// Pass all objects with 'slide' clss to Slider constructor
-/// get the length => number of all images in slider
-// if 
 
 function Slider(slides, sliderContainer, buttonNext, buttonPrevious) {
   this.slides = slides;
@@ -73,7 +70,7 @@ Slider.prototype.displaySlide = function(currentSlide) {
 
 // creating image/slides array 
 
-function getSlides() {
+function getMobileSlides() {
   let slidesArray = [];
   slidesArray[0] = './images/mobile-image-hero-1.jpg';
   slidesArray[1]='./images/mobile-image-hero-2.jpg';
@@ -81,23 +78,29 @@ function getSlides() {
   return slidesArray;
 }
 
+// Init new slider 
+let newMobileSlider = new Slider( 
+  
+  // if mobile get mobile images form files ??????????????
 
-
-let newSlider = new Slider(  
-  getSlides(),
+  // else create slider from biger images and slide text content accordingly to images ????????????/
+  getMobileSlides(),
   document.querySelector('header'),
   document.querySelector('#next'),
   document.querySelector('#previous')
 );
 
-newSlider.buttonNext.addEventListener('click', () => {
-  newSlider.ifLastOrFirst();
-  newSlider.nextSlide();
+// event listeners
+
+newMobileSlider.buttonNext.addEventListener('click', () => {
+  newMobileSlider.ifLastOrFirst();
+  newMobileSlider.nextSlide();
 });
 
 
-newSlider.buttonPrevious.addEventListener('click', () => {
-  newSlider.ifLastOrFirst();
-  newSlider.previousSlide();
-})
+newMobileSlider.buttonPrevious.addEventListener('click', () => {
+  newMobileSlider.ifLastOrFirst();
+  newMobileSlider.previousSlide();
+});
+
 

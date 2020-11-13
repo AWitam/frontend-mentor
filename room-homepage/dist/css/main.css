@@ -76,6 +76,9 @@ nav {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 nav li {
@@ -86,13 +89,13 @@ nav li {
 }
 
 .logo {
+  color: #454545;
+  font-size: 2.4rem;
+  font-weight: 600;
   position: absolute;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  color: #454545;
-  font-size: 2.4rem;
-  font-weight: 600;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -173,4 +176,106 @@ section .cta .cta-arrow {
 
 .about {
   padding: 6rem 3rem;
+}
+
+@media only screen and (min-width: 1300px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 422px 418px 160px 440px;
+        grid-template-columns: 422px 418px 160px 440px;
+    -ms-grid-rows: 534px 266px;
+        grid-template-rows: 534px 266px;
+  }
+  .hamburger {
+    display: none;
+  }
+  nav {
+    visibility: visible;
+    color: white;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 5rem;
+  }
+  nav li {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .logo {
+    position: static;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  header {
+    background-image: url(/images/desktop-image-hero-1.jpg);
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+    height: 534px;
+  }
+  header .header-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    padding: 4rem 2.5rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header-wrapper.open {
+    background-color: transparent;
+  }
+  .arrows-wrapper {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    height: 8rem;
+    width: 16rem;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+  }
+  .arrows-wrapper .arrow:nth-child(1) {
+    padding-left: 4rem;
+  }
+  .arrows-wrapper .arrow:nth-child(2) {
+    padding-right: 4rem;
+  }
+  .hero-content {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3/5;
+    padding: 11rem 10rem;
+  }
+  #img-about-dark {
+    -ms-grid-row: 2;
+    grid-row: 2/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .about {
+    -ms-grid-row: 2;
+    grid-row: 2/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+  }
+  .about {
+    padding: 6.8rem 4.8rem;
+  }
 }
