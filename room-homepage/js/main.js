@@ -2,6 +2,7 @@ const hamburger = document.querySelector('.hamburger');
 const hamburgerIcon = hamburger.firstElementChild
 const headerWrapper = document.querySelector('.header-wrapper');
 const nav = document.querySelector('nav');
+let windowWidth = window.innerWidth;
 
 
 hamburger.addEventListener('click', (e) => {
@@ -18,6 +19,7 @@ hamburger.addEventListener('click', (e) => {
     hamburgerIcon.src = 'images/icon-close.svg';
   }
 });
+
 /// Slider
 
 
@@ -70,21 +72,24 @@ Slider.prototype.displaySlide = function(currentSlide) {
 
 // creating image/slides array 
 
-function getMobileSlides() {
-  let slidesArray = [];
-  slidesArray[0] = './images/mobile-image-hero-1.jpg';
-  slidesArray[1]='./images/mobile-image-hero-2.jpg';
-  slidesArray[2]= './images/mobile-image-hero-3.jpg';
+function getSlides(width) {  
+  const slidesArray = [];
+  if(width < 500) {
+    slidesArray[0] = './images/mobile-image-hero-1.jpg';
+    slidesArray[1]='./images/mobile-image-hero-2.jpg';
+    slidesArray[2]= './images/mobile-image-hero-3.jpg';
+  } else {
+    slidesArray[0] = './images/desktop-image-hero-1.jpg';
+    slidesArray[1]='./images/desktop-image-hero-2.jpg';
+    slidesArray[2]= './images/desktop-image-hero-3.jpg';    
+  }
+  
   return slidesArray;
 }
 
 // Init new slider 
-let newMobileSlider = new Slider( 
-  
-  // if mobile get mobile images form files ??????????????
-
-  // else create slider from biger images and slide text content accordingly to images ????????????/
-  getMobileSlides(),
+let newSlider = new Slider(
+  getSlides(windowWidth),
   document.querySelector('header'),
   document.querySelector('#next'),
   document.querySelector('#previous')
@@ -92,15 +97,22 @@ let newMobileSlider = new Slider(
 
 // event listeners
 
-newMobileSlider.buttonNext.addEventListener('click', () => {
-  newMobileSlider.ifLastOrFirst();
-  newMobileSlider.nextSlide();
+newSlider.buttonNext.addEventListener('click', () => {
+  newSlider.ifLastOrFirst();
+  newSlider.nextSlide();
 });
 
 
-newMobileSlider.buttonPrevious.addEventListener('click', () => {
-  newMobileSlider.ifLastOrFirst();
-  newMobileSlider.previousSlide();
+newSlider.buttonPrevious.addEventListener('click', () => {
+  newSlider.ifLastOrFirst();
+  newSlider.previousSlide();
 });
 
 
+
+
+function reportWindowSize() {
+  windowWidth = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
