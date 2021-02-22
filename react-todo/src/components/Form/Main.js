@@ -6,7 +6,7 @@ import ToDo from "./ToDo";
 import Summary from "./Summary";
 import StatusBar from "./StatusBar";
 import Info from "./Info";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 import store from "../../reducer/store";
 import initialState from "../../reducer/initialState";
 
@@ -21,6 +21,8 @@ const StyledMain = styled.main`
 const Main = () => {
   const [state, dispatch] = useReducer(store, initialState);
   const [filter, setFilter] = useState("ALL");
+  console.log(initialState);
+  console.log(state);
 
   const filteredTodos = state.todos.filter((todo) => {
     if (filter === "ALL") {
@@ -57,6 +59,10 @@ const Main = () => {
   const handleClearCompleted = () => {
     dispatch({ type: "CLEAR_COMPLETED" });
   };
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(state.todos));
+  }, [state]);
 
   return (
     <StyledMain>
