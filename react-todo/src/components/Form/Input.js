@@ -8,15 +8,35 @@ const StyledInput = styled.input.attrs((props) => ({
   placeholder: "Create a new todo...",
 }))`
   background-color: ${({ theme }) => theme.todoContainer};
-
+  font-family: inherit;
+  font-size: var(--font-sm);
+  color: ${({ theme }) => theme.textPrimary};
   border: none;
   width: 100%;
+
+  @media ${device.tablet} {
+    font-size: var(--font-m);
+  }
+
+  @media ${device.laptop} {
+    font-size: var(--font-l);
+    padding-top: 0.4rem;
+  }
 
   ::placeholder {
     font-size: var(--font-sm);
     font-family: "Josefin Sans", sans-serif;
     color: ${({ theme }) => theme.textStatusBar};
     line-height: 1.7;
+
+    @media ${device.tablet} {
+      font-size: var(--font-m);
+    }
+
+    @media ${device.laptop} {
+      font-size: var(--font-l);
+      line-height: 1.2;
+    }
   }
   ::-moz-placeholder {
     opacity: 1;

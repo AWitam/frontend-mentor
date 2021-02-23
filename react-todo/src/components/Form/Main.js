@@ -11,18 +11,37 @@ import store from "../../reducer/store";
 import initialState from "../../reducer/initialState";
 
 const StyledMain = styled.main`
+  margin: 0 auto;
+  font-size: var(--font-sm);
+  position: relative;
+  width: 90vw;
+
   @media ${device.mobileM} {
     width: 32.7rem;
-    margin: 0 auto;
-    font-size: var(--font-sm);
+  }
+
+  @media ${device.mobileL} {
+    width: 40rem;
+  }
+
+  @media ${device.tablet} {
+    width: 44rem;
+    font-size: var(--font-m);
+  }
+
+  @media ${device.laptop} {
+    width: 54rem;
+    font-size: var(--font-l);
+  }
+
+  @media ${device.laptopL} {
+    width: 65rem;
   }
 `;
 
 const Main = () => {
   const [state, dispatch] = useReducer(store, initialState);
   const [filter, setFilter] = useState("ALL");
-  console.log(initialState);
-  console.log(state);
 
   const filteredTodos = state.todos.filter((todo) => {
     if (filter === "ALL") {
@@ -64,6 +83,9 @@ const Main = () => {
     localStorage.setItem("todos", JSON.stringify(state.todos));
   }, [state]);
 
+  const itemsLeft = state.todos.filter((task) => (task.completed ? null : task))
+    .length;
+
   return (
     <StyledMain>
       <Input addTask={handleAddTask} />
@@ -78,12 +100,11 @@ const Main = () => {
             onDelete={handleDelete}
           />
         ))}
-        <Summary
-          todosLeft={state.todos.length}
-          onClear={handleClearCompleted}
-        ></Summary>
+        <Summary todosLeft={itemsLeft} onClear={handleClearCompleted}>
+          <StatusBar onFilterChange={handleFilterChange} />
+        </Summary>
       </ToDoContainer>
-      <StatusBar onFilterChange={handleFilterChange} />
+
       <Info />
     </StyledMain>
   );

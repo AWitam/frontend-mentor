@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import checkmark from "../../assets/img/icon-check.svg";
+import { device } from "../../theme/mediaQueries";
 
 const StyledCheckbox = styled.div`
   margin-right: 1.2rem;
@@ -21,7 +22,13 @@ const StyledCheckbox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media ${device.laptop} {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
+
   input:checked + span {
     background: var(--linear-gradient);
     border: none;

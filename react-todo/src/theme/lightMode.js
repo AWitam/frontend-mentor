@@ -1,4 +1,5 @@
 import bgLight from "../assets/img/bg-mobile-light.jpg";
+import bgLightLarge from "../assets/img/bg-desktop-light.jpg";
 
 export const lightMode = {
   background: "hsl(0, 0%, 98%)",
@@ -9,4 +10,5 @@ export const lightMode = {
   textStatusBar: "hsl(236, 9%, 61%)",
   shadowColor: "hsl(252, 10%, 90%)",
   bgImage: `url(${bgLight})`,
+  bgImageLarge: `url(${bgLightLarge})`,
 };

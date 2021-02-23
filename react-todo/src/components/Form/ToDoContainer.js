@@ -4,7 +4,7 @@ const StyledToDoContainer = styled.div`
   background-color: ${({ theme }) => theme.todoContainer};
   border-radius: 0.5rem;
   margin: 1.6rem 0;
-  box-shadow: 0px 6px 25px ${({ theme }) => theme.shadowColor};
+  box-shadow: 0 3.5rem 5rem -1.5rem ${({ theme }) => theme.shadowColor};
 `;
 
 const ToDoContainer = ({ children }) => {

@@ -1,4 +1,6 @@
 import bgDark from "../assets/img/bg-mobile-dark.jpg";
+import bgDarkLarge from "../assets/img/bg-desktop-dark.jpg";
+
 export const darkMode = {
   background: "hsl(235, 21%, 11%)",
   todoContainer: "hsl(235, 24%, 19%)",
@@ -8,4 +10,5 @@ export const darkMode = {
   textStatusBar: "hsl(234, 11%, 52%)",
   shadowColor: "hsl(235, 25%, 4%)",
   bgImage: `url(${bgDark})`,
+  bgImageLarge: `url(${bgDarkLarge})`,
 };

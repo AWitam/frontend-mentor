@@ -3,6 +3,7 @@ import { useState } from "react";
 import Checkbox from "./Checkbox";
 import cross from "../../assets/img/icon-cross.svg";
 import StyledButton from "../Form/StyledButton";
+import { device } from "../../theme/mediaQueries";
 
 const StyledToDo = styled.div`
   color: ${({ theme }) => theme.textPrimary};
@@ -10,11 +11,19 @@ const StyledToDo = styled.div`
   padding: 1.8rem 0;
   display: flex;
 
+  @media ${device.laptop} {
+    padding: 2rem 0;
+  }
+
   .todo-wrapper {
     padding: 0 2rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media ${device.laptop} {
+      padding: 0 2.4rem;
+    }
   }
 
   label {
@@ -23,7 +32,6 @@ const StyledToDo = styled.div`
 
     p {
       display: inline-block;
-
       padding-top: 0.4rem;
     }
 
@@ -33,8 +41,12 @@ const StyledToDo = styled.div`
     }
   }
 
-  img {
-    max-height: 1.4rem;
+  &:hover {
+    img {
+      @media ${device.laptop} {
+        visibility: visible;
+      }
+    }
   }
 `;
 

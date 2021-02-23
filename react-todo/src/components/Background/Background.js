@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-import { lightMode } from "../../theme/lightMode";
+import { device } from "../../theme/mediaQueries";
 
 const StyledBackground = styled.div`
   background-color: ${({ theme }) => theme.background};
@@ -14,8 +13,28 @@ const StyledBackground = styled.div`
 
 const StyledImg = styled.div`
   background-image: ${({ theme }) => theme.bgImage};
-  background-position: center;
+  background-position: center top;
   height: 20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media ${device.mobileL} {
+    background-image: ${({ theme }) => theme.bgImageLarge};
+    background-size: auto;
+    height: 22rem;
+  }
+
+  @media ${device.tablet} {
+    height: 24rem;
+  }
+
+  @media ${device.laptop} {
+    height: 30rem;
+  }
+
+  @media ${device.laptopL} {
+    background-size: cover;
+  }
 `;
 
 const Background = ({ children }) => {
