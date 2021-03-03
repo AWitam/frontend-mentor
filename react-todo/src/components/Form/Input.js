@@ -53,6 +53,10 @@ const StyledForm = styled.form`
   background-color: ${({ theme }) => theme.todoContainer};
   display: flex;
   align-items: center;
+
+  @media ${device.laptop} {
+    padding: 1.6rem 2.4rem;
+  }
 `;
 
 const Input = ({ addTask }) => {
@@ -71,7 +75,7 @@ const Input = ({ addTask }) => {
   return (
     <StyledForm onSubmit={handleSubmit}>
       {" "}
-      <Checkbox disabled={true} />
+      <Checkbox className="input-checkbox" disabled />
       <StyledInput onChange={handleChange} value={value} />
     </StyledForm>
   );

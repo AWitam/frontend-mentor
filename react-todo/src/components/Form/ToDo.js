@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
 import Checkbox from "./Checkbox";
-import cross from "../../assets/img/icon-cross.svg";
+
+import { ReactComponent as Cross } from "../../assets/img/icon-cross.svg";
 import StyledButton from "../Form/StyledButton";
 import { device } from "../../theme/mediaQueries";
 
@@ -42,7 +43,7 @@ const StyledToDo = styled.div`
   }
 
   &:hover {
-    img {
+    svg {
       @media ${device.laptop} {
         visibility: visible;
       }
@@ -73,7 +74,7 @@ const ToDo = ({ task, id, completed, onComplete, onDelete }) => {
           <p>{task}</p>
         </label>
         <StyledButton onClick={() => handleClick(id)}>
-          <img src={cross} alt="delete icon" />
+          <Cross />
         </StyledButton>
       </div>
     </StyledToDo>

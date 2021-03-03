@@ -22,6 +22,7 @@ const StyledCheckbox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     @media ${device.laptop} {
       width: 2.4rem;
@@ -38,6 +39,12 @@ const StyledCheckbox = styled.div`
     img {
       display: none;
     }
+  }
+
+  .input-checkbox.input-checkbox {
+    cursor: none !important;
+    display: block;
+    border: 8px solid red;
   }
 `;
 

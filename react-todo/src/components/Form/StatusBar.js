@@ -31,6 +31,7 @@ const StyledStatusBar = styled.div`
   button {
     padding: 0 0.8rem;
     color: ${({ theme }) => theme.textStatusBar};
+    cursor: pointer;
   }
   .active {
     color: var(--primary-blue);

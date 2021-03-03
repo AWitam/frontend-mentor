@@ -10,16 +10,24 @@ const StyledButton = styled.button`
   align-items: center;
   color: inherit;
 
-  > img {
-    max-height: 1.4rem;
+  > svg {
+    transform: scale(0.7);
 
     @media ${device.laptop} {
       visibility: hidden;
+      transform: scale(1);
     }
   }
 
   :focus {
     outline: none;
+  }
+
+  &:hover {
+    transform: scale(0.95);
+    path {
+      filter: brightness(1.7);
+    }
   }
 `;
 

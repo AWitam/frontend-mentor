@@ -6,7 +6,7 @@ export const darkMode = {
   todoContainer: "hsl(235, 24%, 19%)",
   task: "hsl(233, 14%, 35%)",
   textPrimary: "hsl(236, 33%, 92%)",
-  textSecondary: "hsl(237, 14%, 26%)",
+  textSecondary: "hsl(233, 14%, 35%)",
   textStatusBar: "hsl(234, 11%, 52%)",
   shadowColor: "hsl(235, 25%, 4%)",
   bgImage: `url(${bgDark})`,
