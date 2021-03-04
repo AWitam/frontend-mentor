@@ -9,6 +9,7 @@ import Info from "./Info";
 import { useState, useReducer, useEffect } from "react";
 import store from "../../reducer/store";
 import initialState from "../../reducer/initialState";
+import { DragDropContext } from "react-beautiful-dnd";
 
 const StyledMain = styled.main`
   margin: 0 auto;
@@ -53,6 +54,7 @@ const Main = () => {
     if (filter === "ACTIVE" && !todo.completed) {
       return true;
     }
+    return false;
   });
 
   const handleFilterChange = (filter) => {
@@ -86,24 +88,39 @@ const Main = () => {
   const itemsLeft = state.todos.filter((task) => (task.completed ? null : task))
     .length;
 
+  const onDragEnd = ({ destination, source }) => {
+    if (!destination) {
+      return;
+    }
+    dispatch({
+      type: "DRAG",
+      todoList: state.todos,
+      startIndex: source.index,
+      endIndex: destination.index,
+    });
+  };
+
   return (
     <StyledMain>
       <Input addTask={handleAddTask} />
-      <ToDoContainer>
-        {filteredTodos.map((todo) => (
-          <ToDo
-            key={todo.id}
-            task={todo.task}
-            id={todo.id}
-            completed={todo.completed}
-            onComplete={handleComplete}
-            onDelete={handleDelete}
-          />
-        ))}
-        <Summary todosLeft={itemsLeft} onClear={handleClearCompleted}>
-          <StatusBar onFilterChange={handleFilterChange} />
-        </Summary>
-      </ToDoContainer>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <ToDoContainer>
+          {filteredTodos.map((todo, index) => (
+            <ToDo
+              key={todo.id}
+              task={todo.task}
+              id={todo.id}
+              completed={todo.completed}
+              onComplete={handleComplete}
+              onDelete={handleDelete}
+              index={index}
+            />
+          ))}
+        </ToDoContainer>
+      </DragDropContext>
+      <Summary todosLeft={itemsLeft} onClear={handleClearCompleted}>
+        <StatusBar onFilterChange={handleFilterChange} />
+      </Summary>
 
       <Info />
     </StyledMain>

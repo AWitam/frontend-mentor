@@ -41,11 +41,7 @@ const StyledCheckbox = styled.div`
     }
   }
 
-  .input-checkbox.input-checkbox {
-    cursor: none !important;
-    display: block;
-    border: 8px solid red;
-  }
+  
 `;
 
 const Checkbox = ({ checked, onComplete }) => {

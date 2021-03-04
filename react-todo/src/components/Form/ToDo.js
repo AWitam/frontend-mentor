@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useState } from "react";
 import Checkbox from "./Checkbox";
-
 import { ReactComponent as Cross } from "../../assets/img/icon-cross.svg";
 import StyledButton from "../Form/StyledButton";
 import { device } from "../../theme/mediaQueries";
+import { Draggable } from "react-beautiful-dnd";
 
 const StyledToDo = styled.div`
   color: ${({ theme }) => theme.textPrimary};
@@ -51,7 +51,7 @@ const StyledToDo = styled.div`
   }
 `;
 
-const ToDo = ({ task, id, completed, onComplete, onDelete }) => {
+const ToDo = ({ task, id, completed, onComplete, onDelete, index }) => {
   const [isCompleted, setCompleted] = useState(completed);
 
   const handleChange = (id, task) => {
@@ -64,20 +64,29 @@ const ToDo = ({ task, id, completed, onComplete, onDelete }) => {
   };
 
   return (
-    <StyledToDo key={id}>
-      <div className="todo-wrapper">
-        <label className={isCompleted ? "completed" : null}>
-          <Checkbox
-            checked={isCompleted}
-            onComplete={() => handleChange(id, task)}
-          />
-          <p>{task}</p>
-        </label>
-        <StyledButton onClick={() => handleClick(id)}>
-          <Cross />
-        </StyledButton>
-      </div>
-    </StyledToDo>
+    <Draggable draggableId={id} index={index}>
+      {(provided) => (
+        <StyledToDo
+          key={id}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+        >
+          <div className="todo-wrapper">
+            <label className={isCompleted ? "completed" : null}>
+              <Checkbox
+                checked={isCompleted}
+                onComplete={() => handleChange(id, task)}
+              />
+              <p>{task}</p>
+            </label>
+            <StyledButton onClick={() => handleClick(id)}>
+              <Cross />
+            </StyledButton>
+          </div>
+        </StyledToDo>
+      )}
+    </Draggable>
   );
 };
 

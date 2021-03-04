@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Droppable } from "react-beautiful-dnd";
 
 const StyledToDoContainer = styled.div`
   background-color: ${({ theme }) => theme.todoContainer};
@@ -8,7 +9,19 @@ const StyledToDoContainer = styled.div`
 `;
 
 const ToDoContainer = ({ children }) => {
-  return <StyledToDoContainer>{children}</StyledToDoContainer>;
+  return (
+    <Droppable droppableId="droppable">
+      {(provided) => (
+        <StyledToDoContainer
+          ref={provided.innerRef}
+          {...provided.droppableProps}
+        >
+          {children}
+          {provided.placeholder}
+        </StyledToDoContainer>
+      )}
+    </Droppable>
+  );
 };
 
 export default ToDoContainer;
