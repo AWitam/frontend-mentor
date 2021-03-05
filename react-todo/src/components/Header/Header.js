@@ -49,11 +49,11 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = ({ themeToggle }) => {
+const Header = ({ themeToggle, theme }) => {
   return (
     <StyledHeader>
       <h1>TODO</h1>
-      <ThemeSwitcher themeToggle={themeToggle} />
+      <ThemeSwitcher themeToggle={themeToggle} theme={theme} />
     </StyledHeader>
   );
 };
