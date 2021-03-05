@@ -3,8 +3,7 @@ import { device } from "../../theme/mediaQueries";
 import Input from "./Input";
 import ToDoContainer from "./ToDoContainer";
 import ToDo from "./ToDo";
-import Summary from "./Summary";
-import StatusBar from "./StatusBar";
+
 import Info from "./Info";
 import { useState, useReducer, useEffect } from "react";
 import store from "../../reducer/store";
@@ -103,24 +102,27 @@ const Main = () => {
   return (
     <StyledMain>
       <Input addTask={handleAddTask} />
-      <DragDropContext onDragEnd={onDragEnd}>
-        <ToDoContainer>
-          {filteredTodos.map((todo, index) => (
-            <ToDo
-              key={todo.id}
-              task={todo.task}
-              id={todo.id}
-              completed={todo.completed}
-              onComplete={handleComplete}
-              onDelete={handleDelete}
-              index={index}
-            />
-          ))}
-        </ToDoContainer>
-      </DragDropContext>
-      <Summary todosLeft={itemsLeft} onClear={handleClearCompleted}>
-        <StatusBar onFilterChange={handleFilterChange} />
-      </Summary>
+      <div>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <ToDoContainer
+            todosLeft={itemsLeft}
+            onClear={handleClearCompleted}
+            onFilterChange={handleFilterChange}
+          >
+            {filteredTodos.map((todo, index) => (
+              <ToDo
+                key={todo.id}
+                task={todo.task}
+                id={todo.id}
+                completed={todo.completed}
+                onComplete={handleComplete}
+                onDelete={handleDelete}
+                index={index}
+              />
+            ))}
+          </ToDoContainer>
+        </DragDropContext>
+      </div>
 
       <Info />
     </StyledMain>

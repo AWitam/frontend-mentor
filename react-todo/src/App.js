@@ -10,7 +10,6 @@ import Background from "./components/Background/Background";
 
 function App() {
   const [theme, setTheme] = useState("lightMode");
-  //const [mode, setMode] = useState('lightMode')
 
   const setMode = (mode) => {
     window.localStorage.setItem("theme", mode);
