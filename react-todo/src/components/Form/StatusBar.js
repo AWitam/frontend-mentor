@@ -19,6 +19,10 @@ const StyledStatusBar = styled.div`
   font-size: var(--font-m);
   margin-top: 1.6rem;
 
+  @media ${device.mobileL} {
+    margin-top: 2rem;
+  }
+
   @media ${device.laptop} {
     position: initial;
     background: transparent;

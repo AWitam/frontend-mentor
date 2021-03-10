@@ -20,7 +20,10 @@ const StyledButton = styled.button`
   }
 
   :focus {
-    outline: none;
+    outline: ${({ theme }) => theme.textSecondary} dashed 0.15rem;
+    svg {
+      visibility: visible;
+    }
   }
 
   &:hover {

@@ -7,13 +7,13 @@ const StyledThemeSwitcher = styled.button`
   border: none;
 
   &:focus {
-    outline: none;
+    outline: ${({ theme }) => theme.textSecondary} dashed 0.15rem;
   }
 `;
 
 const ThemeSwitcher = ({ theme, themeToggle }) => {
   return (
-    <StyledThemeSwitcher onClick={themeToggle}>
+    <StyledThemeSwitcher onClick={themeToggle} onBlur={(e) => e.target.blur()}>
       <img src={theme === "lightMode" ? moon : sun} alt="Theme switcher icon" />
     </StyledThemeSwitcher>
   );

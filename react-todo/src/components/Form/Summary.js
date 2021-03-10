@@ -15,6 +15,10 @@ const StyledSummary = styled.div`
     padding: 1.8rem 2.4rem;
     margin-bottom: 5rem;
   }
+
+  :focus {
+    outline: 1px solid red;
+  }
 `;
 
 const Summary = ({ todosLeft, onClear, children }) => {

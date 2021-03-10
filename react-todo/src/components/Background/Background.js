@@ -9,6 +9,7 @@ const StyledBackground = styled.div`
   top: 0;
   left: 0;
   z-index: -1;
+  transition: all 0.2s ease;
 `;
 
 const StyledImg = styled.div`

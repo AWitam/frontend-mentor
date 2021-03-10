@@ -57,6 +57,10 @@ const StyledForm = styled.form`
   @media ${device.laptop} {
     padding: 1.6rem 2.4rem;
   }
+
+  :focus-within {
+    outline: dashed 0.15rem ${({ theme }) => theme.textSecondary};
+  }
 `;
 
 const Input = ({ addTask }) => {
@@ -75,7 +79,7 @@ const Input = ({ addTask }) => {
   return (
     <StyledForm onSubmit={handleSubmit}>
       {" "}
-      <Checkbox className="input-checkbox" disabled />
+      <Checkbox className="input-checkbox" disabled={true} />
       <StyledInput onChange={handleChange} value={value} />
     </StyledForm>
   );

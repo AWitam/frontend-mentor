@@ -5,7 +5,6 @@ import { darkMode } from "./theme/darkMode";
 import Header from "./components/Header/Header";
 import Main from "./components/Form/Main";
 import GlobalStyle from "./theme/globalStyles";
-
 import Background from "./components/Background/Background";
 
 function App() {

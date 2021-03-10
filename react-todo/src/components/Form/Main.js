@@ -3,7 +3,6 @@ import { device } from "../../theme/mediaQueries";
 import Input from "./Input";
 import ToDoContainer from "./ToDoContainer";
 import ToDo from "./ToDo";
-
 import Info from "./Info";
 import { useState, useReducer, useEffect } from "react";
 import store from "../../reducer/store";

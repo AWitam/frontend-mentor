@@ -6,6 +6,9 @@ import StyledButton from "../Form/StyledButton";
 import { device } from "../../theme/mediaQueries";
 import { Draggable } from "react-beautiful-dnd";
 
+const appearDuration = 500;
+const transitionName = `example`;
+
 const StyledToDo = styled.div`
   color: ${({ theme }) => theme.textPrimary};
   border-bottom: 0.1rem solid ${({ theme }) => theme.textSecondary};
@@ -14,6 +17,10 @@ const StyledToDo = styled.div`
 
   @media ${device.laptop} {
     padding: 2rem 0;
+  }
+
+  :focus {
+    outline: ${({ theme }) => theme.textSecondary} dashed 0.15rem;
   }
 
   .todo-wrapper {
@@ -30,24 +37,60 @@ const StyledToDo = styled.div`
   label {
     display: flex;
     align-items: center;
+    position: relative;
+    transition: color 0.2s ease;
+
+    :focus {
+      outline: ${({ theme }) => theme.textSecondary} dashed 0.15rem;
+    }
 
     p {
       display: inline-block;
       padding-top: 0.4rem;
+      position: relative;
+    }
+
+    &.completed::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 0.12rem;
+      background: ${({ theme }) => theme.textSecondary};
+      margin-left: 3.2rem;
+      animation: strike 1s forwards;
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     &.completed {
-      text-decoration: line-through;
       color: ${({ theme }) => theme.textSecondary};
+      position: relative;
     }
   }
 
-  &:hover {
+  @keyframes strike {
+    from {
+      width: 0%;
+    }
+    to {
+      width: calc(100% - 3.2rem);
+    }
+  }
+
+  :hover {
     svg {
       @media ${device.laptop} {
         visibility: visible;
       }
     }
+  }
+
+  &.${transitionName}-appear {
+    opacity: 0.01;
+  }
+
+  &.${transitionName}-appear-active {
+    opacity: 1;
+    transition: opacity ${appearDuration}ms ease-out;
   }
 `;
 
@@ -76,7 +119,7 @@ const ToDo = ({ task, id, completed, onComplete, onDelete, index }) => {
             <label className={isCompleted ? "completed" : null}>
               <Checkbox
                 checked={isCompleted}
-                onComplete={() => handleChange(id, task)}
+                onChange={() => handleChange(id, task)}
               />
               <p>{task}</p>
             </label>

@@ -1,64 +1,78 @@
-import { useState } from "react";
 import styled from "styled-components";
 import checkmark from "../../assets/img/icon-check.svg";
 import { device } from "../../theme/mediaQueries";
 
+const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+  // Hide checkbox visually but remain accessible to screen readers.
+  // Source: https://polished.js.org/docs/#hidevisually
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  cursor: pointer;
+`;
+
 const StyledCheckbox = styled.div`
   margin-right: 1.2rem;
   display: flex;
+  justify-content: center;
   align-items: center;
+  border: ${({ checked, theme }) =>
+    checked ? `none` : `0.15rem solid ${theme.textSecondary}`};
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: ${({ checked, theme }) =>
+    checked ? " var(--linear-gradient)" : `${(theme) => theme.todoContainer}`};
+  animation: ${({ checked }) => (checked ? " scale 0.4s" : "none")};
 
-  input[type="checkbox"] {
-    display: none;
+  ${HiddenCheckbox}:focus+ & {
+    outline: ${({ theme }) => theme.textSecondary} dashed 0.15rem;
   }
 
-  input + span {
-    display: inline-block;
-    border-radius: 50%;
-    border: 0.1rem solid ${({ theme }) => theme.textSecondary};
-    width: 2rem;
-    height: 2rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  img {
+    visibility: ${({ checked }) => (checked ? "visible" : "hidden")};
+    animation: ${({ checked }) => (checked ? " check 0.4s" : "none")};
+  }
 
-    @media ${device.laptop} {
-      width: 2.4rem;
-      height: 2.4rem;
+  @keyframes scale {
+    50% {
+      transform: scale(1.2);
     }
   }
 
-  input:checked + span {
-    background: var(--linear-gradient);
-    border: none;
-  }
-
-  input:not(:checked) + span {
-    img {
-      display: none;
+  @keyframes check {
+    50% {
+      transform: scale(0.8);
+      opacity: 1;
+      rotate: 15deg;
     }
   }
 
-  
+  @media ${device.laptop} {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 `;
 
-const Checkbox = ({ checked, onComplete }) => {
-  const [isChecked, setChecked] = useState(checked);
+const CheckboxContainer = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+`;
 
-  const handleChange = (e) => {
-    setChecked(!isChecked);
-    onComplete();
-  };
-
+const Checkbox = ({ checked, ...props }) => {
   return (
-    <StyledCheckbox>
-      <input type="checkbox" checked={isChecked} onChange={handleChange} />
-      <span>
+    <CheckboxContainer>
+      <HiddenCheckbox checked={checked} {...props} />
+      <StyledCheckbox checked={checked}>
         <img src={checkmark} alt="checkmark" />
-      </span>
-    </StyledCheckbox>
+      </StyledCheckbox>
+    </CheckboxContainer>
   );
 };
 
