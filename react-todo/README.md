@@ -15,7 +15,7 @@
 
 #### Designs
 
-![Given designs for mobile and desktop](./assets/desktop-preview.jpg)
+![Given designs for mobile and desktop](./src/assets/desktop-preview.jpg)
 
 #### Built with
 
